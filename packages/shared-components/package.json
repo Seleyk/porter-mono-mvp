@@ -1,0 +1,14 @@
+{
+  "name": "@porter/shared-components",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/react": "*",
+    "@types/react-native": "*"
+  }
+}
