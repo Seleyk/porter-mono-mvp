@@ -1,0 +1,11 @@
+{
+  "name": "@porter/shared-services",
+  "version": "1.0.0", 
+  "main": "index.ts",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
