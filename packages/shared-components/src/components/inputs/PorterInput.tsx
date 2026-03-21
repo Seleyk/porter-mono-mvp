@@ -1,18 +1,24 @@
 // packages/shared-components/src/components/inputs/PorterInput.tsx
-import React from 'react';
-import { View, TextInput, Text, StyleSheet } from 'react-native';
-import { PorterColors, PorterSpacing, PorterRadius, PorterTypography } from '../../theme';
+import React from "react";
+import { View, TextInput, Text, StyleSheet } from "react-native";
+import {
+  PorterColors,
+  PorterSpacing,
+  PorterRadius,
+  PorterTypography,
+} from "../../theme";
 
 export interface PorterInputProps {
   label?: string;
   placeholder?: string;
   value: string;
   onChangeText: (text: string) => void;
+  onFocus?: () => void;
   error?: string;
   disabled?: boolean;
   secureTextEntry?: boolean;
-  keyboardType?: 'default' | 'email-address' | 'numeric' | 'phone-pad';
-  autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters';
+  keyboardType?: "default" | "email-address" | "numeric" | "phone-pad";
+  autoCapitalize?: "none" | "sentences" | "words" | "characters";
   multiline?: boolean;
   numberOfLines?: number;
 }
@@ -22,11 +28,12 @@ export default function PorterInput({
   placeholder,
   value,
   onChangeText,
+  onFocus,
   error,
   disabled = false,
   secureTextEntry = false,
-  keyboardType = 'default',
-  autoCapitalize = 'sentences',
+  keyboardType = "default",
+  autoCapitalize = "sentences",
   multiline = false,
   numberOfLines = 1,
 }: PorterInputProps) {
@@ -50,6 +57,7 @@ export default function PorterInput({
         autoCapitalize={autoCapitalize}
         multiline={multiline}
         numberOfLines={multiline ? numberOfLines : 1}
+        onFocus={onFocus}
       />
       {error && <Text style={styles.errorText}>{error}</Text>}
     </View>
@@ -87,7 +95,7 @@ const styles = StyleSheet.create({
   inputMultiline: {
     minHeight: 80,
     paddingTop: PorterSpacing.md,
-    textAlignVertical: 'top',
+    textAlignVertical: "top",
   },
   errorText: {
     fontSize: PorterTypography.fontSize.xs,
